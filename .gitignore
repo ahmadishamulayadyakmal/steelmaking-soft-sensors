@@ -1,0 +1,26 @@
+# Python / Fortran build outputs
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+build/
+dist/
+*.egg-info/
+*.mod
+
+# Environment and local data
+.pixi/
+data/raw/*
+!data/raw/.gitkeep
+.env
+.env.*
+!.env.example
+
+# Generated artefacts
+figures/*.png
+figures/*.svg
+docs/site/
+
+# Editors / OS
+.DS_Store
+Thumbs.db

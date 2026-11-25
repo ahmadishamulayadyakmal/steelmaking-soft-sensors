@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  repo-checks:
+    name: Repository hygiene
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check README sections and citation metadata
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import sys
+
+          required = [
+              "## Industrial problem",
+              "## Data (no plant data)",
+              "## Tool chain",
+              "## Journal references",
+              "## Validation & claims",
+              "## Limitations",
+          ]
+          readme = Path("README.md").read_text(encoding="utf-8")
+          citation = Path("CITATION.cff").read_text(encoding="utf-8")
+          errors = []
+
+          missing = [section for section in required if section not in readme]
+          if missing:
+              errors.append("README.md missing: " + ", ".join(missing))
+          if "cff-version:" not in citation:
+              errors.append("CITATION.cff has no cff-version field")
+
+          if errors:
+              print("\n".join(errors))
+              sys.exit(1)
+          print("README sections and CITATION.cff: OK")
+          PY
+
+      - name: Python tests (when present)
+        shell: bash
+        run: |
+          if find tests -name 'test_*.py' -type f 2>/dev/null | grep -q .; then
+            python -m pip install --quiet pytest
+            python -m pytest -q
+          else
+            echo "No Python tests in this repository yet."
+          fi

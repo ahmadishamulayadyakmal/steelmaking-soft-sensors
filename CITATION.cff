@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+title: CALPHAD features & mechanical properties
+message: If you use this software, please cite it.
+type: software
+version: 0.1.0
+date-released: 2026-11-24
+license: MIT
+authors:
+  - family-names: Akmal
+    given-names: Ahmad Ishamul Ayady
+abstract: >-
+  Repository E05 of the computational metallurgy portfolio, covering
+  sprints W18–W22.

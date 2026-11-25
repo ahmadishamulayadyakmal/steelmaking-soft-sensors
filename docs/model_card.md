@@ -1,6 +1,6 @@
 # Model card — <model name>
 
-**Sprint:** WNN · **Version:** `<version>` · **Date:** YYYY-MM-DD
+**Version:** `<version>` · **Date:** YYYY-MM-DD
 
 ## Intended use
 
@@ -8,7 +8,7 @@ What the model predicts, and for which alloy/process range.
 
 ## Data
 
-- Source and license (must be listed in `data/SOURCES.md`):
+- Source, licence and checksum:
 - Number of samples and splits:
 - Official benchmark split used (if any):
 - Leakage checks:

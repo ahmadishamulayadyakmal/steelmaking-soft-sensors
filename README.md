@@ -1,9 +1,5 @@
 # Steelmaking soft sensors and steel fatigue (C05)
 
-> Workspace folder: `e05-calphad-mechanical-properties` · Suggested GitHub repository: `steelmaking-soft-sensors`
-> Epic: E05 · Weeks: W18–W21 · Evidence level: **A + B**
-> Master specification: [`CASES.md`](https://github.com/ahmadishamulayadyakmal/metallurgy-project/blob/main/CASES.md) §4 · Download the papers: [`JOURNALS.md`](https://github.com/ahmadishamulayadyakmal/metallurgy-project/blob/main/JOURNALS.md)
-
 ## Industrial problem
 
 Real control problems: BOF endpoint carbon/phosphorus/temperature (Tata Steel, 28,000 heats); blast-furnace hot-metal silicon with delayed sampling (Gary Works); EAF slag-foaming height unmeasurable online. Plus fatigue strength of NIMS steels, where destructive testing is slow.
@@ -12,12 +8,9 @@ Real control problems: BOF endpoint carbon/phosphorus/temperature (Tata Steel, 2
 
 ## Data (no plant data)
 
-Mixed: NIMS MatNavi / Agrawal supplementary data (A, D05), MatBench steels (A), and journal-documented plant results (B) used ONLY as external literature. Open or documented synthetic surrogates reproduce the methods for B cases. No plant data is held.
+Mixed: NIMS MatNavi / Agrawal supplementary data (D05), MatBench steels, and journal-documented plant results used only as external literature. Open or documented synthetic surrogates reproduce the methods where plant data cannot be released. No plant data is held.
 
-> The author cannot supply factory data. This project uses **only open datasets and
-> credible peer-reviewed journals**. If this is a B-level case, the case report
-> must contain the exact disclaimer from `CASES.md` §1 and must **never** claim
-> plant validation.
+> Only open datasets and published literature are used. No plant or proprietary data are held here; plant numbers quoted from papers are external literature, not independently reproduced results.
 
 ## Tool chain
 
@@ -25,22 +18,17 @@ Mixed: NIMS MatNavi / Agrawal supplementary data (A, D05), MatBench steels (A), 
 
 ## Journal references
 
-- **R09** — 360 NIMS steels, RF comparator, key feature families.
-- **R10** — XGBoost fatigue comparator and external R2.
-- **R12** — thermodynamic features + interpretability.
-- **R13** — `pycalphad` equilibrium features.
+- **R09** ([DOI](https://doi.org/10.1007/s11431-020-1599-5)) — 360 NIMS steels, RF comparator, key feature families.
+- **R10** ([DOI](https://doi.org/10.1007/s12541-019-00048-6)) — XGBoost fatigue comparator and external R2.
+- **R12** ([DOI](https://doi.org/10.1016/j.mtcomm.2025.112674)) — thermodynamic features + interpretability.
+- **R13** ([DOI](https://doi.org/10.5334/jors.140)) — `pycalphad` equilibrium features.
 - **R14** — CALPHAD Gibbs/sublattice model foundations (compound: 2 papers).
 - **R15** — CALPHAD book reference.
-- **Y2R01** — BOF endpoint problem + external, non-reproduced plant numbers.
-- **Y2R02** — blast-furnace silicon problem + external 91% figure.
-- **Y2R03** — EAF slag foaming + external RMSE/R2 figures.
-- **Y2R12** — NIMS fatigue dataset, error-modality warning.
-- **D05** — NIMS / Agrawal dataset provenance.
-
-Each reference above is listed with its DOI or stable URL, access status and
-manual download route in [`JOURNALS.md`](https://github.com/ahmadishamulayadyakmal/metallurgy-project/blob/main/JOURNALS.md) §4, and in the shared
-BibTeX library `papers/references.bib`. Do not cite a paper you have not been
-able to obtain; if it is inaccessible, record that in `JOURNALS.md` §8.
+- **Y2R01** ([DOI](https://doi.org/10.3390/met12050801)) — BOF endpoint problem + external, non-reproduced plant numbers.
+- **Y2R02** ([DOI](https://doi.org/10.3390/ma18030632)) — blast-furnace silicon problem + external 91% figure.
+- **Y2R03** ([DOI](https://doi.org/10.1016/j.jmrt.2021.02.085)) — EAF slag foaming + external RMSE/R2 figures.
+- **Y2R12** ([DOI](https://doi.org/10.1186/2193-9772-3-8)) — NIMS fatigue dataset, error-modality warning.
+- **D05** ([DOI](https://doi.org/10.1186/2193-9772-3-8)) — NIMS / Agrawal dataset provenance.
 
 ## Deliverables
 
@@ -48,47 +36,19 @@ able to obtain; if it is inaccessible, record that in `JOURNALS.md` §8.
 
 ## Validation & claims
 
-Conformal empirical coverage reported; no random split across time; B-level statement in every B case; 3.7% / 9.77% / 91% / 0.905 / R2 > 0.97 appear ONLY as cited external literature.
+Conformal empirical coverage reported; no random split across time; external plant numbers are labelled as such wherever they appear; 3.7% / 9.77% / 91% / 0.905 / R2 > 0.97 appear ONLY as cited external literature.
 
 ## Limitations
 
-Every B case must state: plant numbers are from the cited paper and were NOT independently reproduced; our result is comparable in method only, not in plant validation. No safety claim.
+Plant numbers quoted from cited papers are external literature and were not independently reproduced; results are comparable in method only, not in plant validation. No safety claim.
 
-## Definition of Done
+## Repository layout
 
-1 merged PR · green tests · 1 new artefact · 1 README paragraph · 1 sprint note
-`docs/sprints/wNN.md` · tag `wNN`. Before the case tag `c05` is created,
-this README must contain all six sections: Industrial problem, Data (no plant
-data), Tool chain, Journal references, Validation & claims, Limitations.
+- `README.md` — case summary, data policy, method, results and limitations.
+- `CONTRIBUTING.md` — how to propose changes.
+- `docs/index.md` — documentation map.
+- `docs/model_card.md` and `docs/vv_template.md` — reporting templates.
+- `.github/workflows/ci.yml` — automated checks.
 
-## Repository skeleton
-
-Shared files: `CONTRIBUTING.md` (sprint contract), `.github/` (issue, PR and
-CI templates), `docs/sprints/wNN.md`, `docs/vv_template.md` and
-`docs/model_card.md`. `CASES.md`, `JOURNALS.md` and `REPOSITORIES.md` are in a
-separate planning repository; their links above remain valid after this folder
-is pushed as its own repository.
-
-The real industrial case dossier is in `case/`: `README.md` (full case card),
-`evidence.md`, `sources.md` and `week_plan.md`.
-
-## Repository status and GitHub Desktop
-
-This folder is already a Git repository on `main`, pushed to GitHub as
-`steelmaking-soft-sensors` with an SSH `origin`. In GitHub Desktop, choose **Add local
-repository** and select this folder; do not clone into the same path.
-
-```bash
-git status --short --branch
-git pull --rebase origin main
-git push origin main
-```
-
-Weekly work follows `CONTRIBUTING.md`: one PR, green tests, one artefact, one
-README paragraph, `docs/sprints/wNN.md`, tag `wNN`. Tag `c05` only after
-all six README sections are complete.
-
-
-## Language
-
-All artefacts in this repository are written in **English**.
+Only open data and published literature are used. No plant or proprietary data
+are included. All artefacts are written in English.

@@ -1,6 +1,6 @@
-## Sprint
+## Summary
 
-`wNN` — <sprint title>
+<!-- What does this change do and why? -->
 
 ## What changed
 
@@ -8,16 +8,13 @@
 
 ## Evidence
 
-- Reference ID (`Rx` / `Dxx`) and the exact equation, table or number used:
-- Dataset, license and checksum (if any):
+- Dataset, licence and checksum (if applicable):
+- Reference DOI or analytical benchmark:
 - Error estimate / uncertainty:
 
 ## Checklist
 
-- [ ] One new artefact committed
-- [ ] `README.md` updated with one paragraph
-- [ ] `CHANGELOG.md` updated
-- [ ] `docs/sprints/wNN.md` written
-- [ ] Tests green locally and in CI
-- [ ] All six README sections still present
-- [ ] No plant data, publisher PDFs or API keys committed
+- [ ] Tests pass locally and in CI
+- [ ] `README.md` and `CHANGELOG.md` updated where relevant
+- [ ] New numbers have provenance and an uncertainty estimate
+- [ ] No plant data, publisher PDFs or secrets committed

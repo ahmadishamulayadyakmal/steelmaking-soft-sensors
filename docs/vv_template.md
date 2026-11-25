@@ -1,7 +1,7 @@
 # V&V report — <case name>
 
-**Sprint:** WNN · **Solver / model version:** `<version>` · **Date:** YYYY-MM-DD
-**Reference:** Rx (DOI and exact equation/table used)
+**Solver / model version:** `<version>` · **Date:** YYYY-MM-DD
+**Reference:** DOI and exact equation, table or benchmark used
 
 ## 1. Question
 
@@ -35,7 +35,7 @@ validation)?
 
 ## 6. Reproduction
 
-Exact command and commit/tag used:
+Exact command and commit used:
 
 ```bash
 just test

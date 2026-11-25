@@ -1,6 +1,6 @@
 # Steelmaking soft sensors and steel fatigue (C05)
 
-> Workspace folder: `e05-calphad-mechanical-properties` · Suggested GitHub repository: `metallurgy-calphad-ml`
+> Workspace folder: `e05-calphad-mechanical-properties` · Suggested GitHub repository: `steelmaking-soft-sensors`
 > Epic: E05 · Weeks: W18–W21 · Evidence level: **A + B**
 > Master specification: [`CASES.md`](https://github.com/ahmadishamulayadyakmal/metallurgy-project/blob/main/CASES.md) §4 · Download the papers: [`JOURNALS.md`](https://github.com/ahmadishamulayadyakmal/metallurgy-project/blob/main/JOURNALS.md)
 
@@ -72,22 +72,22 @@ is pushed as its own repository.
 The real industrial case dossier is in `case/`: `README.md` (full case card),
 `evidence.md`, `sources.md` and `week_plan.md`.
 
-## Push this folder to GitHub
+## Repository status and GitHub Desktop
 
-This folder is prepared but is **not** a Git repository yet:
+This folder is already a Git repository on `main`, pushed to GitHub as
+`steelmaking-soft-sensors` with an SSH `origin`. In GitHub Desktop, choose **Add local
+repository** and select this folder; do not clone into the same path.
 
 ```bash
-cd e05-calphad-mechanical-properties
-git init
-git branch -M main
-git remote add origin https://github.com/<your-user>/metallurgy-calphad-ml.git
-git add .
-git commit -m "Initial import: C05 · W18–W21"
-git push -u origin main
+git status --short --branch
+git pull --rebase origin main
+git push origin main
 ```
 
-Use weekly tags `wNN` and one case tag `c05` inside this repository.
-Never commit API keys, raw downloaded datasets or publisher PDFs.
+Weekly work follows `CONTRIBUTING.md`: one PR, green tests, one artefact, one
+README paragraph, `docs/sprints/wNN.md`, tag `wNN`. Tag `c05` only after
+all six README sections are complete.
+
 
 ## Language
 
